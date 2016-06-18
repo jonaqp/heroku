@@ -1,0 +1,65 @@
+{% load i18n %}
+{% load filter %}
+
+{% if not group_module_exist %}
+    <div class="caption">
+        <i class="icon-settings font-dark"></i>
+        <span class="caption-subject font-dark sbold uppercase">{% trans "Create Sub Module" %}</span>
+    </div> <br>
+    <div class="form-group">
+        <div id="content_{{ formset_submoduleform.prefix }}">
+            {% if formset_submoduleform   %}
+                {% for form in formset_submoduleform %}
+
+                    <div class="form-group dynamic-form"  id="{{ form.prefix }}-row">
+                        {{ form.id|addcss:"hidden" }}
+                        {{ form.DELETE|addcss:"hidden" }}
+                        {{ form.ORDER|addcss:"hidden" }}
+                        <label class="col-md-3 col-xs-3 control-label">{% trans "Sub Module"  %}</label>
+                        <div class="col-md-7 col-xs-7">
+                           {{ form.submodule }}
+                           <span  class="help-block"> {{ form.submodule.errors }} </span>
+                        </div>
+                        <div class="col-md-2 col-xs-2 formset-icon-remove" >
+                            <a class="btn btn-danger delete-row" onclick="remove_formset_global(this, '{{ formset_submoduleform.prefix}}')" href="javascript:;">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+             {% endif %}
+        </div>
+        {{ formset_submoduleform.non_form_errors }}
+        {{ formset_submoduleform.management_form }}
+    </div>
+    <div class="form-group">
+        <a href="javascript:add_formset_global('{{ formset_submoduleform.prefix }}')" class="btn btn-primary">Add</a>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-offset-5 col-md-7 col-xs-offset-5 col-xs-7">
+                {% if not btn_edit %}
+                    <button type="button" data-count="{{ count_sub_module }}" data-prefix="{{ formset_submoduleform.prefix }}" class="btn green submit_group_module">{% trans "Submit" %}</button>
+                    <button type="button" class="btn default clean_field">{% trans "Cancel" %}</button>
+                {% else %}
+                    <button type="button" data-count="{{ count_sub_module }}" data-prefix="{{ formset_submoduleform.prefix }}"  data-id="{{ form_pk }}"  id="view_group_module_update" class="btn green">{% trans "Update" %}</button>
+                    <button type="button" class="btn default reload_page">{% trans "Exit" %}</button>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+{% else %}
+    {% if msg_exists%}
+        <div class="row">
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="alert alert-{{msg.level_tag}}">
+                    <strong>{{ msg.level_tag|capfirst }}! </strong> {{msg.message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+   {% endif %}
+{% endif %}

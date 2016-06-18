@@ -1,0 +1,89 @@
+{% extends "base2.html" %}
+{% load i18n %}
+{% load filter %}
+{% load static from staticfiles %}
+
+{% block css_plugins %}
+{% endblock css_plugins %}
+
+{% block css_global %}
+    <link href="{% static "assets/global/css/components.min.css" %}" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="{% static "assets/global/css/plugins.min.css" %}" rel="stylesheet" type="text/css" />
+{% endblock css_global %}
+
+{% block css_page %}
+    <link href="{% static "assets/layouts/layout3/css/layout.min.css" %}" rel="stylesheet" type="text/css" />
+    <link href="{% static "assets/layouts/layout3/css/themes/default.min.css" %}" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="{% static "assets/layouts/layout3/css/custom.min.css" %}" rel="stylesheet" type="text/css" />
+{% endblock css_page %}
+
+<body  {% block class_body  %}class="page-container-bg-solid page-boxed"{% endblock class_body  %}>
+
+{% block content  %}
+
+        {% block header  %}
+            {{ block.super }}
+        {% endblock header  %}
+
+        {% block container  %}
+            {{ block.super }}
+            {% block head_container %}
+                 {{ block.super }}
+            {% endblock head_container %}
+
+            {% block content_container %}
+                {{ block.super }}
+
+                {% block page-content-inner %}
+                    <div class="page-lock">
+                    <div class="page-logo">
+                        <a class="brand" href="index.html">
+                            <img src="../assets/pages/img/logo-big.png" alt="logo"> </a>
+                    </div>
+                    <div class="page-body">
+                        <div class="lock-head"> Locked</div>
+                        <div class="lock-body">
+                            <div class="pull-left lock-avatar-block">
+                                <img src="../assets/pages/media/profile/photo3.jpg" class="lock-avatar"></div>
+                            <form class="lock-form pull-left" action="index.html" method="post">
+                                <h4>Amanda Smith</h4>
+                                <div class="form-group">
+                                    <input class="form-control placeholder-no-fix" type="password" autocomplete="off"
+                                           placeholder="Password" name="password"></div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn red uppercase">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="lock-bottom">
+                            <a href="">Not Amanda Smith?</a>
+                        </div>
+                    </div>
+                    <div class="page-footer-custom"> 2014 © Metronic. Admin Dashboard Template.</div>
+                </div>
+
+                {% endblock page-content-inner %}
+
+            {% endblock content_container %}
+        {% endblock container %}
+
+        {% block footer  %}
+            {{ block.super }}
+        {% endblock footer  %}
+
+
+        {% block js  %}
+            {{ block.super }}
+        {% endblock js  %}
+
+        {% block js_global %}
+            {{ block.super }}
+        {% endblock js_global %}
+
+        {% block js_app  %}
+           {{ block.super }}
+        {% endblock js_app  %}
+
+
+
+{% endblock content %}

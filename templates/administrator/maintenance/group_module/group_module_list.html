@@ -1,0 +1,58 @@
+{% load i18n %}
+    <div class="portlet-body flip-scroll">
+        <table class="table table-bordered table-striped table-condensed flip-content">
+             <thead>
+             <thead class="flip-content">
+                 <th> #</th>
+                 <th> Group </th>
+                 <th> Module</th>
+                 <th> Modified Date </th>
+                 <th> Action </th>
+             </tr>
+             </thead>
+             {% load cache %}
+             {% cache 10 list_group_submodule user  %}
+                 {% regroup list_group_module by group_module as group_list %}
+                 {% for group_submodule in group_list %}
+                     <tr>
+                         <td  data-toggle="collapse" data-target="#demo{{ forloop.counter }}" class="accordion-toggle collapsed">
+                             <button class="btn btn-default btn-xs"><span class="fa fa-eye fa-2x"></span></button>
+                         </td>
+                         <td>{{ group_submodule.grouper.group }}</td>
+                         <td>{{ group_submodule.grouper.module }}</td>
+                         <td>{{ group_submodule.grouper.date_modified|date:"Y-m-d H:i:s" }}</td>
+                         <td><a data-id="{{ group_submodule.grouper.id}}" data-module="{{ group_submodule.grouper.module.text }}" href="javascript:;"
+                                class="btn btn-outline btn-circle btn-sm purple view_group_module_edit"><i class="fa fa-edit"></i>{% trans "Edit" %}</a>
+                         </td>
+
+                     </tr>
+                     <tr>
+                        <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body collapse" id="demo{{ forloop.counter }}" style="height: 0px;">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th style="vertical-align: middle">SUBMODULE</th>
+                                            <th>
+                                                {% for submodule in group_submodule.list %}
+                                                    {{ submodule.submodule.text|linebreaks }}
+                                                {% endfor %}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </td>
+                     </tr>
+
+                    {% empty %}
+                     <tr>
+                         <td colspan="5" class="text-center">
+                             {% trans "Sorry, not result in this list." %}
+                         </td>
+                     </tr>
+                 {% endfor %}
+             {% endcache %}
+        </table>
+    </div>
+

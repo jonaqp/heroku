@@ -1,0 +1,64 @@
+#Core
+wheel==0.29.0
+Django==1.9.6
+djangorestframework==3.3.3
+
+# WSGI HTTP Server
+gunicorn==19.6.0
+gevent==1.1.1
+Collectfast==0.2.3
+
+# Debugging
+ipdb==0.10.0
+ipython==4.2.0
+django-extensions==1.6.7
+django-debug-toolbar==1.4
+whitenoise==3.2
+
+# Configuration
+django-sites==0.9
+django-environ==0.4.0
+
+
+# Models
+psycopg2==2.6.1
+Pillow==3.2.0
+
+# Cache
+django-redis==4.4.3
+redis>=2.10.0
+
+# Staticfiles
+-e 'git+https://github.com/jschneier/django-storages.git#egg=django-storages'
+boto==2.40.0
+django-toolbelt
+
+#Documentation
+#mkdocs==0.15.3
+
+
+#testing
+#coverage==4.1
+
+#logging
+
+
+
+#format code
+#pep8
+#pyflakes
+#pylint
+
+
+#help packages
+#django-smart-selects==1.2.2
+
+
+#templates
+#pyjade
+
+
+#Parse
+Wand==0.4.3
+
+

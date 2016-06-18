@@ -1,0 +1,250 @@
+{% extends "base2.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% load filter %}
+
+{% block css_plugins %}
+{% endblock css_plugins %}
+
+
+{% block css_global %}
+    {{ block.super }}
+{% endblock css_global %}
+
+{% block css_page %}
+    {{ block.super }}
+{% endblock css_page %}
+
+<body {% block class_body %}class="page-container-bg-solid page-boxed"{% endblock class_body %}>
+
+{% block content %}
+
+    {% block header %}
+        {{ block.super }}
+    {% endblock header %}
+
+    {% block container %}
+        {{ block.super }}
+        {% block head_container %}
+            {{ block.super }}
+        {% endblock head_container %}
+
+        {% block content_container %}
+            <div class="page-content" style="min-height: 253px;">
+                <div class="container">
+                    {% block breadcrumb %}
+                        {{ block.super }}
+                    {% endblock breadcrumb %}
+
+
+                    {% block page-content-inner %}
+                        <div class="page-content-inner">
+                            <div class="row portlet light">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form role="form">
+                                            <div class="form-group col-md-6">
+                                                <label class="control-label">Boat</label><br>
+                                                <select class="form-control">
+                                                    <option>Option ds</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="control-label">Trip</label><br>
+                                                <select class="form-control">
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <form class="form-horizontal">
+                                                 <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Status Trip</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option>Enabled</option>
+                                                            <option>Disabled</option>
+                                                        </select>
+                                                    </div>
+                                                  </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <br>
+                                        <div class="row">
+                                            <div class="scroller" style="height:380px" data-rail-visible="1" data-rail-color="yellow" data-handle-color="#a1b2bd">
+
+                                                <div class="col-md-4 col-sm-4">
+                                                        <div class="mt-element-ribbon bg-grey-steel">
+                                                            <div class="ribbon ribbon-vertical-right ribbon-color-info uppercase">
+                                                                <i><input type="checkbox"></i>
+                                                            </div>
+                                                             <p class="ribbon-content"><img  class="img-responsive" src="https://farm1.staticflickr.com/1/2759520_6dea8b9007.jpg"></p>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-left"><i class="fa fa-undo"></i></button></div>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-right"><i class="fa fa-repeat "></i></button></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                        <div class="mt-element-ribbon bg-grey-steel">
+                                                            <div class="ribbon ribbon-vertical-right ribbon-color-info uppercase">
+                                                                <i><input type="checkbox"></i>
+                                                            </div>
+                                                             <p class="ribbon-content"><img  class="img-responsive" src="https://farm1.staticflickr.com/1/2759520_6dea8b9007.jpg"></p>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-left"><i class="fa fa-undo"></i></button></div>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-right"><i class="fa fa-repeat "></i></button></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                        <div class="mt-element-ribbon bg-grey-steel">
+                                                            <div class="ribbon ribbon-vertical-right ribbon-color-info uppercase">
+                                                                <i><input type="checkbox"></i>
+                                                            </div>
+                                                             <p class="ribbon-content"><img  class="img-responsive" src="https://farm1.staticflickr.com/1/2759520_6dea8b9007.jpg"></p>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-left"><i class="fa fa-undo"></i></button></div>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-right"><i class="fa fa-repeat "></i></button></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                        <div class="mt-element-ribbon bg-grey-steel">
+                                                            <div class="ribbon ribbon-vertical-right ribbon-color-info uppercase">
+                                                                <i><input type="checkbox"></i>
+                                                            </div>
+                                                             <p class="ribbon-content"><img  class="img-responsive" src="https://farm1.staticflickr.com/1/2759520_6dea8b9007.jpg"></p>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-left"><i class="fa fa-undo"></i></button></div>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-right"><i class="fa fa-repeat "></i></button></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                        <div class="mt-element-ribbon bg-grey-steel">
+                                                            <div class="ribbon ribbon-vertical-right ribbon-color-info uppercase">
+                                                                <i><input type="checkbox"></i>
+                                                            </div>
+                                                             <p class="ribbon-content"><img  class="img-responsive" src="https://farm1.staticflickr.com/1/2759520_6dea8b9007.jpg"></p>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-left"><i class="fa fa-undo"></i></button></div>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-right"><i class="fa fa-repeat "></i></button></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                        <div class="mt-element-ribbon bg-grey-steel">
+                                                            <div class="ribbon ribbon-vertical-right ribbon-color-info uppercase">
+                                                                <i><input type="checkbox"></i>
+                                                            </div>
+                                                             <p class="ribbon-content"><img  class="img-responsive" src="https://farm1.staticflickr.com/1/2759520_6dea8b9007.jpg"></p>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-left"><i class="fa fa-undo"></i></button></div>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-right"><i class="fa fa-repeat "></i></button></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                        <div class="mt-element-ribbon bg-grey-steel">
+                                                            <div class="ribbon ribbon-vertical-right ribbon-color-info uppercase">
+                                                                <i><input type="checkbox"></i>
+                                                            </div>
+                                                             <p class="ribbon-content"><img  class="img-responsive" src="https://farm1.staticflickr.com/1/2759520_6dea8b9007.jpg"></p>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-left"><i class="fa fa-undo"></i></button></div>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-right"><i class="fa fa-repeat "></i></button></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-4 col-sm-4">
+                                                        <div class="mt-element-ribbon bg-grey-steel">
+                                                            <div class="ribbon ribbon-vertical-right ribbon-color-info uppercase">
+                                                                <i><input type="checkbox"></i>
+                                                            </div>
+                                                             <p class="ribbon-content"><img  class="img-responsive" src="https://farm1.staticflickr.com/1/2759520_6dea8b9007.jpg"></p>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-left"><i class="fa fa-undo"></i></button></div>
+                                                             <div class="col-xs-6"><button class="btn btn-xs btn-default pull-right"><i class="fa fa-repeat "></i></button></div>
+                                                        </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="portlet light portlet-fit ">
+                                            <div class="portlet-title">
+                                                <div class="caption">
+                                                    <i class=" icon-layers font-yellow"></i>
+                                                    <span class="caption-subject font-yellow bold uppercase">Location</span>
+                                                </div>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="row">
+                                                    <div id="gmap_polygons" class="gmaps"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <br>
+                                    <div class="col-md-offset-5 col-md-7">
+                                        <button type="submit" class="btn blue"><i class="fa fa-check"></i> Save Changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock page-content-inner %}
+                </div>
+            </div>
+        {% endblock content_container %}
+    {% endblock container %}
+
+    {% block footer %}
+        {{ block.super }}
+    {% endblock footer %}
+
+
+    {% block js %}
+        {{ block.super }}
+    {% endblock js %}
+
+    {% block js_plugins %}
+        <script src="{% static "assets/global/plugins/gmaps/gmaps.min.js" %}"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    {% endblock js_plugins %}
+
+    <script type="text/javascript">
+        var map;
+        $(document).ready(function () {
+            map = new GMaps({
+                el: '#gmap_polygons',
+                lat: -12.043333,
+                lng: -77.028333,
+                zoomControl: true,
+                zoomControlOpt: {
+                    style: 'SMALL',
+                    position: 'TOP_LEFT'
+                },
+                panControl: false,
+                streetViewControl: false,
+                mapTypeControl: false,
+                mapTypeId: google.maps.MapTypeId.SATELLITE,
+                overviewMapControl: false
+            });
+
+
+        });
+    </script>
+    {% block js_global %}
+        {{ block.super }}
+    {% endblock js_global %}
+
+    {% block js_app %}
+        {{ block.super }}
+    {% endblock js_app %}
+
+
+
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% load i18n %}
+<div class="portlet-body flip-scroll">
+    <table class="table table-bordered table-striped table-condensed flip-content">
+        <thead class="flip-content">
+            <tr>
+                <th># </th>
+                <th> Container</th>
+                <th> Date Image </th>
+                <th> Latitude-Longitude </th>
+                <th> Action </th>
+            </tr>
+        </thead>
+        <tbody>
+
+             {% for trip in list_trips  %}
+                 <tr>
+                     <td><strong>{{ forloop.counter }}.-</strong></td>
+                     <td> {{ trip.container }} </td>
+                     <td> {{ trip.date_image }}  </td>
+                     <td> {{ trip.latitude }}-{{ trip.longitude }} </td>
+                     <td><a data-id="{{ trip.id }}" href="javascript:;"
+                            class="btn btn-outline btn-circle btn-sm purple view_trip_edit">
+                         <i class="fa fa-edit"></i>{% trans "Edit" %}</a></td>
+                 </tr>
+             {% empty %}
+                 <tr>
+                     <td colspan="4" class="text-center">
+                         {% trans "Sorry, not result in this list." %}
+                     </td>
+                 </tr>
+             {% endfor %}
+
+        </tbody>
+    </table>
+</div>

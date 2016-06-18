@@ -1,0 +1,118 @@
+from django.utils.translation import ugettext_lazy as _
+
+BTN_EDIT = 'EDIT'
+# BTN_REMOVE = 'REMOVE'
+# BTN_SAVE = 'SAVE'
+# BTN_ADD = 'ADD'
+
+msg_group_module_exist = _('The group and module already exist')
+msg_sub_module_exist = _('Sub modules not exist')
+msg_sub_module_duplicate = _('You are saving duplicate Submodules')
+
+
+msg_success = _('Data saved correctly')
+msg_error = _('There was an error saving information')
+msg_warning = _('It required to complete required fields')
+MESSAGE_TAGS = {
+    'success': msg_success,
+    'error': msg_error,
+    'warning': msg_warning,
+}
+
+NAME_SELECT_DEFAULT = _('--Choose--')
+SELECT_DEFAULT = (('', NAME_SELECT_DEFAULT),)
+DISABLED = 'DISABLED'
+ENABLED = 'ENABLED'
+STATUS_MODEL1 = (
+    (ENABLED, _('Enabled')),
+    (DISABLED, _('Disabled')),
+)
+
+CURRENT = 'CURRENT'
+CANCELED = 'CANCELED'
+STATUS_MODEL2 = (
+    (CURRENT, _('Current')),
+    (CANCELED, _('Canceled')),
+)
+
+CODE_OCEANIA = 'OC'
+CODE_EUROPE = 'EU'
+CODE_AFRICA = 'AF'
+CODE_NORTH_AMERICA = 'NA'
+CODE_ANTARCTICA = 'AN'
+CODE_SOUTH_AMERICA = 'SA'
+CODE_ASIA = 'AS'
+CONTINENT_CHOICES = (
+    (CODE_OCEANIA, _('Oceania')),
+    (CODE_EUROPE, _('Europe')),
+    (CODE_AFRICA, _('Africa')),
+    (CODE_NORTH_AMERICA, _('North America')),
+    (CODE_ANTARCTICA, _('Antarctica')),
+    (CODE_SOUTH_AMERICA, _('South America')),
+    (CODE_ASIA, _('Asia')),
+)
+
+CODE_COMPANY_TYPE = '01'
+CODE_IDENTITY_DOCUMENT = '02'
+CODE_CIVIL_STATUS = '03'
+CODE_GENDER = '04'
+CODE_CURRENCY = '05'
+CODE_DRIVER_LICENSE = '06'
+
+CODE_COMPANY_TYPE_STRING = (CODE_COMPANY_TYPE, _('Company Type'))
+CODE_IDENTITY_DOCUMENT_STRING = (
+    CODE_IDENTITY_DOCUMENT, _('Identity Document Types'))
+CODE_CIVIL_STATUS_STRING = (CODE_CIVIL_STATUS, _('Civil status'))
+CODE_GENDER_STRING = (CODE_GENDER, _('Gender'))
+CODE_CURRENCY_STRING = (CODE_CURRENCY, _('Currency'))
+CODE_DRIVER_LICENSE_STRING = (CODE_DRIVER_LICENSE, _('Driver License'))
+
+# ITEMS CODE_IDENTITY_DOCUMENT_ITEMS
+CODE_IDENTITY_DOCUMENT_ITEM1 = 'ID-01'
+CODE_IDENTITY_DOCUMENT_ITEM2 = 'ID-02'
+CODE_IDENTITY_DOCUMENT_ITEM3 = 'ID-03'
+CODE_IDENTITY_DOCUMENT_STRING1 = (CODE_IDENTITY_DOCUMENT_ITEM1, _('DNI'))
+CODE_IDENTITY_DOCUMENT_STRING2 = (CODE_IDENTITY_DOCUMENT_ITEM2, _('RUC'))
+CODE_IDENTITY_DOCUMENT_STRING3 = (CODE_IDENTITY_DOCUMENT_ITEM3, _('PASSPORT'))
+CODE_IDENTITY_DOCUMENT_LIST = (
+    CODE_IDENTITY_DOCUMENT_STRING1, CODE_IDENTITY_DOCUMENT_STRING2,
+    CODE_IDENTITY_DOCUMENT_STRING3)
+
+# ITEMS CODE_CIVIL_STATUS_ITEMS
+CODE_CIVIL_STATUS_ITEM1 = 'CS-01'
+CODE_CIVIL_STATUS_ITEM2 = 'CS-02'
+CODE_CIVIL_STATUS_ITEM3 = 'CS-03'
+CODE_CIVIL_STATUS_ITEM4 = 'CS-04'
+CODE_CIVIL_STATUS_STRING1 = (CODE_CIVIL_STATUS_ITEM1, _('SINGLE'))
+CODE_CIVIL_STATUS_STRING2 = (CODE_CIVIL_STATUS_ITEM2, _('MARRIED'))
+CODE_CIVIL_STATUS_STRING3 = (CODE_CIVIL_STATUS_ITEM3, _('WIDOWED'))
+CODE_CIVIL_STATUS_STRING4 = (CODE_CIVIL_STATUS_ITEM4, _('DIVORCED'))
+CODE_CIVIL_STATUS_LIST = (
+    CODE_CIVIL_STATUS_STRING1, CODE_CIVIL_STATUS_STRING2,
+    CODE_CIVIL_STATUS_STRING3, CODE_CIVIL_STATUS_STRING4)
+
+ENTITY_LIST = (
+
+    (
+        CODE_IDENTITY_DOCUMENT_STRING[1],
+        (
+            (
+                CODE_IDENTITY_DOCUMENT_STRING1,
+                CODE_IDENTITY_DOCUMENT_STRING2,
+                CODE_IDENTITY_DOCUMENT_STRING3,
+            )
+        )
+    ),
+
+    (
+        CODE_CIVIL_STATUS_STRING[1],
+        (
+            (
+                CODE_CIVIL_STATUS_STRING1,
+                CODE_CIVIL_STATUS_STRING2,
+                CODE_CIVIL_STATUS_STRING3,
+                CODE_CIVIL_STATUS_STRING4,
+            )
+        )
+    ),
+)

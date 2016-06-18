@@ -1,0 +1,9 @@
+{
+  "msg_cancel": "Cancelar",
+  "msg_canceled": "Cancelado",
+  "msg_submit": "Enviar",
+  "msg_total_sub_module %s": "Solo puede asignar un total de %s submodules",
+  "msg_choose": "--Seleccione--",
+  "msg_choose_change": "Usted no ha seleccionado submodules",
+  "msg_choose_repeat": "Usted tiene submodules repetidos"
+}

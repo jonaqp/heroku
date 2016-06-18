@@ -1,0 +1,575 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-26 15:19-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: core/admin.py:65
+msgid "Personal info"
+msgstr ""
+
+#: core/admin.py:66
+msgid "Permissions"
+msgstr ""
+
+#: core/admin.py:68
+msgid "Important dates"
+msgstr ""
+
+#: core/constants.py:8
+msgid "The group and module already exist"
+msgstr ""
+
+#: core/constants.py:9
+msgid "Sub modules not exist"
+msgstr ""
+
+#: core/constants.py:10
+msgid "You are saving duplicate Submodules"
+msgstr ""
+
+#: core/constants.py:13
+msgid "Data saved correctly"
+msgstr ""
+
+#: core/constants.py:14
+msgid "There was an error saving information"
+msgstr ""
+
+#: core/constants.py:15
+msgid "It required to complete required fields"
+msgstr ""
+
+#: core/constants.py:22
+msgid "--Choose--"
+msgstr ""
+
+#: core/constants.py:27
+msgid "Enabled"
+msgstr ""
+
+#: core/constants.py:28
+msgid "Disabled"
+msgstr ""
+
+#: core/constants.py:34
+msgid "Current"
+msgstr ""
+
+#: core/constants.py:35
+msgid "Canceled"
+msgstr ""
+
+#: core/constants.py:46
+msgid "Oceania"
+msgstr ""
+
+#: core/constants.py:47
+msgid "Europe"
+msgstr ""
+
+#: core/constants.py:48
+msgid "Africa"
+msgstr ""
+
+#: core/constants.py:49
+msgid "North America"
+msgstr ""
+
+#: core/constants.py:50
+msgid "Antarctica"
+msgstr ""
+
+#: core/constants.py:51
+msgid "South America"
+msgstr ""
+
+#: core/constants.py:52
+msgid "Asia"
+msgstr ""
+
+#: core/constants.py:62
+msgid "Company Type"
+msgstr ""
+
+#: core/constants.py:64
+msgid "Identity Document Types"
+msgstr ""
+
+#: core/constants.py:65
+msgid "Civil status"
+msgstr ""
+
+#: core/constants.py:66
+msgid "Gender"
+msgstr ""
+
+#: core/constants.py:67
+msgid "Currency"
+msgstr ""
+
+#: core/constants.py:68
+msgid "Driver License"
+msgstr ""
+
+#: core/constants.py:74
+msgid "DNI"
+msgstr ""
+
+#: core/constants.py:75
+msgid "RUC"
+msgstr ""
+
+#: core/constants.py:76
+msgid "PASSPORT"
+msgstr ""
+
+#: core/constants.py:86
+msgid "SINGLE"
+msgstr ""
+
+#: core/constants.py:87
+msgid "MARRIED"
+msgstr ""
+
+#: core/constants.py:88
+msgid "WIDOWED"
+msgstr ""
+
+#: core/constants.py:89
+msgid "DIVORCED"
+msgstr ""
+
+#: core/forms.py:45
+msgid "Passwords don't match"
+msgstr ""
+
+#: core/forms.py:64 core/forms.py:82
+#: templates/administrator/maintenance/users/user_add.html:35
+msgid "Password"
+msgstr ""
+
+#: core/forms.py:65
+msgid ""
+"Raw passwords are not stored, so there is no way to see this user's "
+"password, but you can change the password using <a href=\"../password/"
+"\">this form</a>."
+msgstr ""
+
+#: core/forms.py:81 core/models.py:41
+msgid "Email Address"
+msgstr ""
+
+#: core/forms.py:85
+msgid "Please enter a correct email and password."
+msgstr ""
+
+#: core/forms.py:176 templates/core/profile/settings.html.py:200
+msgid "New Password"
+msgstr ""
+
+#: core/forms.py:178
+#: templates/administrator/maintenance/users/user_add.html:50
+msgid "Re-Password"
+msgstr ""
+
+#: core/models.py:43
+msgid "Active"
+msgstr ""
+
+#: core/models.py:44
+msgid ""
+"Designates whether this users should be treated as active. Unselect this "
+"instead of deleting profiles."
+msgstr ""
+
+#: core/models.py:46
+msgid "date joined"
+msgstr ""
+
+#: core/models.py:47
+msgid "Is_admin"
+msgstr ""
+
+#: core/models.py:49
+msgid "Groups"
+msgstr ""
+
+#: core/models.py:51
+msgid ""
+"The groups this user belongs to. A user will get all permissions granted to "
+"each of their groups."
+msgstr ""
+
+#: core/models.py:59
+msgid "User Permissions"
+msgstr ""
+
+#: core/models.py:61
+msgid "Specific permissions for this user."
+msgstr ""
+
+#: core/models.py:71 core/models.py:72
+msgid "users"
+msgstr ""
+
+#: core/models.py:219
+msgid "Thumbnail"
+msgstr ""
+
+#: core/utils/fields.py:18
+msgid "date created"
+msgstr ""
+
+#: core/utils/fields.py:21
+msgid "date modified"
+msgstr ""
+
+#: core/utils/fields.py:25
+msgid "current user"
+msgstr ""
+
+#: demo/settings/settings.py:134
+msgid "Spanish"
+msgstr ""
+
+#: demo/settings/settings.py:135
+msgid "English"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_module_add.html:8
+msgid "Create Group Module"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_module_add.html:10
+msgid "Edit Group Module"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_module_add.html:22
+msgid "Group"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_module_add.html:29
+msgid "Module"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_module_add.html:39
+msgid "Validate"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_module_add.html:40
+#: templates/administrator/maintenance/group_module/group_submodule_formset.html:44
+#: templates/administrator/maintenance/groups/group_add.html:40
+#: templates/administrator/maintenance/users/user_add.html:104
+#: templates/core/profile/settings.html:187
+msgid "Cancel"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_module_list.html:26
+#: templates/administrator/maintenance/groups/group_list.html:24
+#: templates/administrator/maintenance/users/user_list.html:23
+msgid "Edit"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_module_list.html:52
+#: templates/administrator/maintenance/groups/group_list.html:29
+#: templates/administrator/maintenance/users/user_list.html:28
+msgid "Sorry, not result in this list."
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_submodule_formset.html:7
+msgid "Create Sub Module"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_submodule_formset.html:18
+msgid "Sub Module"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_submodule_formset.html:43
+#: templates/administrator/maintenance/groups/group_add.html:39
+#: templates/administrator/maintenance/users/user_add.html:103
+#: templates/core/registration/registration_form.html:10
+msgid "Submit"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_submodule_formset.html:46
+#: templates/administrator/maintenance/groups/group_add.html:42
+#: templates/administrator/maintenance/users/user_add.html:106
+msgid "Update"
+msgstr ""
+
+#: templates/administrator/maintenance/group_module/group_submodule_formset.html:47
+#: templates/administrator/maintenance/groups/group_add.html:43
+#: templates/administrator/maintenance/users/user_add.html:107
+msgid "Exit"
+msgstr ""
+
+#: templates/administrator/maintenance/groups/group_add.html:8
+msgid "Create Group"
+msgstr ""
+
+#: templates/administrator/maintenance/groups/group_add.html:10
+msgid "Edit Group"
+msgstr ""
+
+#: templates/administrator/maintenance/groups/group_add.html:22
+msgid "Name"
+msgstr ""
+
+#: templates/administrator/maintenance/groups/group_add.html:29
+msgid "Status"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user.html:43
+msgid "List User"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:7
+msgid "Create User Profile"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:9
+msgid "Edit User Profile"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:21
+msgid "E-mail"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:64
+#: templates/core/profile/settings.html:132
+msgid "First Name"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:70
+#: templates/core/profile/settings.html:135
+msgid "Last Name"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:76
+#: templates/core/profile/settings.html:139
+msgid "Cell"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:82
+#: templates/core/profile/settings.html:143
+msgid "Company"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:88
+#: templates/core/profile/settings.html:147
+msgid "Document Type"
+msgstr ""
+
+#: templates/administrator/maintenance/users/user_add.html:94
+#: templates/core/profile/settings.html:151
+msgid "Document Number"
+msgstr ""
+
+#: templates/core/profile/settings.html:174
+msgid "Select image"
+msgstr ""
+
+#: templates/core/profile/settings.html:175
+msgid "Change"
+msgstr ""
+
+#: templates/core/profile/settings.html:177
+msgid "Remove"
+msgstr ""
+
+#: templates/core/profile/settings.html:197
+msgid "Current Password"
+msgstr ""
+
+#: templates/core/profile/settings.html:203
+msgid "Re-type New Password"
+msgstr ""
+
+#: templates/core/registration/activate.html:5
+msgid "Account activation failed."
+msgstr ""
+
+#: templates/core/registration/activation_complete.html:4
+msgid "Account Activated"
+msgstr ""
+
+#: templates/core/registration/activation_complete.html:8
+msgid "Your account is now activated."
+msgstr ""
+
+#: templates/core/registration/activation_complete.html:10
+msgid "You can log in."
+msgstr ""
+
+#: templates/core/registration/activation_email.html:6
+msgid "registration"
+msgstr ""
+
+#: templates/core/registration/activation_email.html:11
+#, python-format
+msgid ""
+"\n"
+"    You (or someone pretending to be you) have asked to register an account "
+"at\n"
+"    %(site_name)s.  If this wasn't you, please ignore this email\n"
+"    and your address will be removed from our records.\n"
+"    "
+msgstr ""
+
+#: templates/core/registration/activation_email.html:18
+#, python-format
+msgid ""
+"\n"
+"    To activate this account, please click the following link within the "
+"next\n"
+"    %(expiration_days)s days:\n"
+"    "
+msgstr ""
+
+#: templates/core/registration/activation_email.html:30
+#, python-format
+msgid ""
+"\n"
+"    Sincerely,\n"
+"    %(site_name)s Management\n"
+"    "
+msgstr ""
+
+#: templates/core/registration/activation_email.txt:2
+#, python-format
+msgid ""
+"\n"
+"You (or someone pretending to be you) have asked to register an account at\n"
+"%(site_name)s.  If this wasn't you, please ignore this email\n"
+"and your address will be removed from our records.\n"
+msgstr ""
+
+#: templates/core/registration/activation_email.txt:7
+#, python-format
+msgid ""
+"\n"
+"To activate this account, please click the following link within the next\n"
+"%(expiration_days)s days:\n"
+msgstr ""
+
+#: templates/core/registration/activation_email.txt:14
+#, python-format
+msgid ""
+"\n"
+"Sincerely,\n"
+"%(site_name)s Management\n"
+msgstr ""
+
+#: templates/core/registration/activation_email_subject.txt:1
+msgid "Account activation on"
+msgstr ""
+
+#: templates/core/registration/login.html:26
+msgid "Enter your login information"
+msgstr ""
+
+#: templates/core/registration/logout.html:4
+msgid "Logged out"
+msgstr ""
+
+#: templates/core/registration/logout.html:7
+msgid "Successfully logged out"
+msgstr ""
+
+#: templates/core/registration/password_change_done.html:4
+msgid "Password changed"
+msgstr ""
+
+#: templates/core/registration/password_change_done.html:7
+msgid "Password successfully changed!"
+msgstr ""
+
+#: templates/core/registration/password_change_form.html:4
+#: templates/core/registration/password_change_form.html:10
+msgid "Change password"
+msgstr ""
+
+#: templates/core/registration/password_reset_complete.html:26
+msgid "Password reset complete"
+msgstr ""
+
+#: templates/core/registration/password_reset_done.html:26
+msgid "Password reset"
+msgstr ""
+
+#: templates/core/registration/password_reset_done.html:29
+msgid ""
+"\n"
+"                                            We have sent you an email with a "
+"link to reset your password. Please check\n"
+"                                            your email and click the link to "
+"continue.\n"
+"                                       "
+msgstr ""
+
+#: templates/core/registration/password_reset_email.html:3
+msgid "Greetings"
+msgstr ""
+
+#: templates/core/registration/password_reset_email.html:5
+#, python-format
+msgid ""
+"\n"
+"You are receiving this email because you (or someone pretending to be you)\n"
+"requested that your password be reset on the %(domain)s site. If you do not\n"
+"wish to reset your password, please ignore this message.\n"
+msgstr ""
+
+#: templates/core/registration/password_reset_email.html:11
+msgid ""
+"\n"
+"To reset your password, please click the following link, or copy and paste "
+"it\n"
+"into your web browser:\n"
+msgstr ""
+
+#: templates/core/registration/password_reset_email.html:18
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: templates/core/registration/password_reset_email.html:21
+msgid "Best regards"
+msgstr ""
+
+#: templates/core/registration/password_reset_email.html:22
+msgid "Management"
+msgstr ""
+
+#: templates/core/registration/registration_closed.html:4
+msgid "Registration is closed"
+msgstr ""
+
+#: templates/core/registration/registration_closed.html:7
+msgid "Sorry, but registration is closed at this moment. Come back later."
+msgstr ""
+
+#: templates/core/registration/registration_complete.html:4
+msgid "Activation email sent"
+msgstr ""
+
+#: templates/core/registration/registration_complete.html:7
+msgid "Please check your email to complete the registration process."
+msgstr ""
+
+#: templates/core/registration/registration_form.html:4
+msgid "Register for an account"
+msgstr ""

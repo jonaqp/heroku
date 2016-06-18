@@ -1,0 +1,104 @@
+{% extends "base2.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% load filter %}
+
+{% block css_plugins %}
+{% endblock css_plugins %}
+
+{% block css_global %}
+    {{ block.super }}
+{% endblock css_global %}
+
+{% block css_page %}
+    {{ block.super }}
+{% endblock css_page %}
+
+<body  {% block class_body  %}class="page-container-bg-solid page-boxed"{% endblock class_body  %}>
+
+{% block content  %}
+
+        {% block header  %}
+            {{ block.super }}
+        {% endblock header  %}
+
+        {% block container  %}
+            {{ block.super }}
+            {% block head_container %}
+                  {{ block.super }}
+            {% endblock head_container %}
+
+            {% block content_container %}
+               <div class="page-content" style="min-height: 253px;">
+                   <div class="container">
+                        {% block breadcrumb %}
+                           {{ block.super }}
+                        {% endblock breadcrumb %}
+
+
+                        {% block page-content-inner %}
+                             <div class="page-content-inner">
+                                <div class="row portlet light">
+                                    <div id="load_group_module_add" class="col-md-6 ">
+                                         {% include 'administrator/maintenance/group_module/group_module_add.html' %}
+                                    </div>
+
+                                    <div class="col-md-6 ">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="icon-settings font-dark"></i>
+                                                <span class="caption-subject font-dark sbold uppercase">List Group</span>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body form">
+                                            <div  class="form-body">
+
+                                                <div class="tab-content">
+                                                     <div class="tab-pane active" id="tab_1_1">
+                                                        <div id="load_group_module_list" class="scroller" style="height: 260px;" data-always-visible="1" data-rail-visible="0">
+                                                            {% include 'administrator/maintenance/group_module/group_module_list.html' %}
+                                                        </div>
+                                                     </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                        {% endblock page-content-inner %}
+                   </div>
+               </div>
+            {% endblock content_container %}
+        {% endblock container %}
+
+        {% block footer  %}
+            {{ block.super }}
+        {% endblock footer  %}
+
+
+        {% block js  %}
+            {{ block.super }}
+        {% endblock js  %}
+
+        <script type="text/javascript">
+            var URL_FORMSET_SUBMODULE = "{% url 'maintenance:maintenance-group-module-formset-submodule' %}";
+            var URL_GROUP_MODULE_EDIT = "{% url 'maintenance:maintenance-group-module-edit' %}";
+            var URL_GROUP_MODULE_LIST = "{% url 'maintenance:maintenance-group-module-list' %}";
+        </script>
+        {% block js_plugins  %}
+            <script src="{% static "assets/pages/scripts/formset.js" %}" type="text/javascript"></script>
+            <script src="{% static "assets/pages/scripts/maintenance_group_module.js" %}" type="text/javascript"></script>
+        {% endblock js_plugins  %}
+
+        {% block js_global %}
+            {{ block.super }}
+        {% endblock js_global %}
+
+        {% block js_app  %}
+           {{ block.super }}
+        {% endblock js_app  %}
+
+
+
+{% endblock content %}

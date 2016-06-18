@@ -1,0 +1,34 @@
+{% load i18n %}
+<div class="portlet-body flip-scroll">
+    <table class="table table-bordered table-striped table-condensed flip-content">
+         <thead>
+         <thead class="flip-content">
+             <th> #</th>
+             <th> Name</th>
+             <th> Status</th>
+             <th> Creation Date</th>
+             <th> Modified Date</th>
+             <th> Action</th>
+         </tr>
+         </thead>
+
+         {% for group in list_group %}
+             <tr>
+                 <td><strong>{{ forloop.counter }}.-</strong></td>
+                 <td> {{ group.group.name }} </td>
+                 <td> {{ group.current_status }} </td>
+                 <td> {{ group.date_created|date:"Y-m-d H:i:s" }} </td>
+                 <td> {{ group.date_modified|date:"Y-m-d H:i:s" }} </td>
+                 <td><a data-id="{{ group.group.id }}" href="javascript:;"
+                        class="btn btn-outline btn-circle btn-sm purple view_group_edit">
+                     <i class="fa fa-edit"></i>{% trans "Edit" %}</a></td>
+             </tr>
+         {% empty %}
+             <tr>
+                 <td colspan="6" class="text-center">
+                     {% trans "Sorry, not result in this list." %}
+                 </td>
+             </tr>
+         {% endfor %}
+    </table>
+</div>

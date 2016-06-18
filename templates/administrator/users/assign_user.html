@@ -1,0 +1,69 @@
+{% extends "base2.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% load filter %}
+
+{% block css_plugins %}
+{% endblock css_plugins %}
+
+{% block css_global %}
+    {{ block.super }}
+{% endblock css_global %}
+
+{% block css_page %}
+    {{ block.super }}
+{% endblock css_page %}
+
+<body {% block class_body %}class="page-container-bg-solid page-boxed"{% endblock class_body %}>
+
+{% block content %}
+
+    {% block header %}
+        {{ block.super }}
+    {% endblock header %}
+
+    {% block container %}
+        {{ block.super }}
+        {% block head_container %}
+            {{ block.super }}
+        {% endblock head_container %}
+
+        {% block content_container %}
+            <div class="page-content" style="min-height: 253px;">
+                <div class="container">
+                    {% block breadcrumb %}
+                        {{ block.super }}
+                    {% endblock breadcrumb %}
+
+
+                    {% block page-content-inner %}
+
+                    {% endblock page-content-inner %}
+                </div>
+            </div>
+        {% endblock content_container %}
+    {% endblock container %}
+
+    {% block footer %}
+        {{ block.super }}
+    {% endblock footer %}
+
+
+    {% block js %}
+        {{ block.super }}
+    {% endblock js %}
+
+    {% block js_plugins %}
+    {% endblock js_plugins %}
+
+    {% block js_global %}
+        {{ block.super }}
+    {% endblock js_global %}
+
+    {% block js_app %}
+        {{ block.super }}
+    {% endblock js_app %}
+
+
+
+{% endblock content %}

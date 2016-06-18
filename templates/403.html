@@ -1,0 +1,80 @@
+{% extends "base2.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% load filter %}
+{% load staticfiles %}
+
+{% block css_plugins %}
+{% endblock css_plugins %}
+
+{% block css_global %}
+    {{ block.super }}
+{% endblock css_global %}
+
+{% block css_page %}
+    {{ block.super }}
+    <link href="{% static 'assets/pages/css/error.min.css'  %}" rel="stylesheet" type="text/css">
+{% endblock css_page %}
+
+<body  {% block class_body  %}class="page-container-bg-solid page-boxed"{% endblock class_body  %}>
+
+{% block content  %}
+
+        {% block header  %}
+            {{ block.super }}
+        {% endblock header  %}
+
+        {% block container  %}
+            {{ block.super }}
+            {% block head_container %}
+
+            {% endblock head_container %}
+
+            {% block content_container %}
+               <div class="page-content" style="min-height: 253px;">
+                   <div class="container">
+                        {% block breadcrumb %}
+
+                        {% endblock breadcrumb %}
+
+                        {% block page-content-inner %}
+                             <div class="page-content-inner">
+                                 <div class="row">
+                                    <div class="col-md-12 page-404">
+                                        <div class="number font-green"> 403 </div>
+                                        <div class="details">
+                                            <h3>Oops! You're lost.</h3>
+                                            <p> We can not find the page you're looking for.
+                                                <br>
+                                                <a href="{% url 'administrator:index' %}"> Return home </a> or try the search bar below.
+                                            </p>
+                                        </div>
+                                    </div>
+                                 </div>
+                             </div>
+                        {% endblock page-content-inner %}
+                   </div>
+               </div>
+            {% endblock content_container %}
+        {% endblock container %}
+
+        {% block footer  %}
+            {{ block.super }}
+        {% endblock footer  %}
+
+
+        {% block js  %}
+            {{ block.super }}
+        {% endblock js  %}
+
+        {% block js_global %}
+            {{ block.super }}
+        {% endblock js_global %}
+
+        {% block js_app  %}
+           {{ block.super }}
+        {% endblock js_app  %}
+
+
+
+{% endblock content %}

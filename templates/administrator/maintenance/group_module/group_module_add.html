@@ -1,0 +1,64 @@
+{% load i18n %}
+
+<div class="portlet-title">
+    <div class="caption">
+        <i class="icon-settings font-dark"></i>
+        <span class="caption-subject font-dark sbold uppercase">
+            {% if not btn_edit %}
+                 {% trans "Create Group Module" %}
+            {% else %}
+                 {% trans "Edit Group Module" %} {{ form_group_module.group.value }}
+            {% endif %}
+
+        </span>
+    </div>
+
+</div>
+<div class="portlet-body form">
+    <div  class="form-body">
+        <form id="form_group_module" class="form-horizontal" role="form" method="post">
+            {% csrf_token %}
+            <div id="group_errors" class="form-group">
+                <label class="col-md-3 control-label">{% trans "Group"  %}</label>
+                <div class="col-md-9">
+                   {{ form_group_module.group }}
+                   <span  class="help-block"> {{ form_group_module.group.errors }} </span>
+                </div>
+            </div>
+            <div id="module_errors" class="form-group">
+                <label class="col-md-3 control-label">{% trans "Module"  %}</label>
+                <div class="col-md-9">
+                   {{ form_group_module.module }}
+                   <span  class="help-block"> {{ form_group_module.module.errors }} </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-7 btn_principal {% if btn_edit %}hidden  {% endif %}">
+                            <button type="button" class="btn green validate_group_module">{% trans "Validate" %}</button>
+                            <button type="button" class="btn default clean_field">{% trans "Cancel" %}</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="load_formset_group_module" class="form-horizontal">
+                {% if btn_edit %}
+                     {% include 'administrator/maintenance/group_module/group_submodule_formset.html' %}
+                {% endif %}
+            </div>
+
+        </form>
+        <hr>
+        <div class="row" id="load_msg">
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="alert alert-{{msg.level_tag}}">
+                    <strong>{{ msg.level_tag|capfirst }}! </strong> {{msg.message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+

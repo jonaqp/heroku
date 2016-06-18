@@ -1,0 +1,78 @@
+#shellcatch_timeliner{
+	-webkit-box-shadow:0 0 15px #aaa;
+	-moz-box-shadow:0 0 15px #aaa;
+	box-shadow:0 0 15px #aaa;
+}
+/* Each slide */
+#shellcatch_timeliner .slide{
+	background:#fff;
+	padding:20px;
+}
+/* The timeline background */
+#shellcatch_timeliner .timeline{
+	background:#fff;
+}
+/* The timeline fill bar */
+#shellcatch_timeliner .innertimeline{
+	background:#000;
+}
+/* The time display */
+#shellcatch_timeliner .timedisplay{
+	font:11px verdana,sans-serif;
+	padding:3px 5px;
+}
+/* Each node */
+#shellcatch_timeliner .node{
+	background:url(../images/node.gif) top center no-repeat;
+	width:32px;
+	height:24px;
+}
+/* The active node */
+#shellcatch_timeliner .node_active{
+	background:url(../images/node_active.gif) top center no-repeat;
+}
+/* Each node tooltip */
+#shellcatch_timeliner .tooltip{}
+/* The time display inside a tooltip */
+#shellcatch_timeliner .tooltiptime{
+	font-size:8pt;
+	font-weight:bold;
+}
+/* The pause/play button */
+#shellcatch_timeliner .pause, #shellcatch_timeliner .play{
+	width:80px;
+	height:80px;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px;
+	-webkit-box-shadow:0 0 10px #bbb;
+	-moz-box-shadow:0 0 10px #bbb;
+	box-shadow:0 0 10px #bbb;
+}
+/* The pause button */
+#shellcatch_timeliner .pause{
+	background:#fff url(../images/pause.gif) center no-repeat;
+}
+/* The play button */
+#shellcatch_timeliner .play{
+	background:#fff url(../images/play.gif) center no-repeat;
+}
+/* The previous/next buttons */
+#shellcatch_timeliner .previous, #shellcatch_timeliner .next{
+	width:43px;
+	height:50px;
+}
+/* The previous button */
+#shellcatch_timeliner .previous{
+	background:#fff url(../images/previous.gif) center no-repeat;
+	-webkit-border-radius:6px 0 0 6px;
+	-moz-border-radius:6px 0 0 6px;
+	border-radius:6px 0 0 6px;
+}
+/* The next button */
+#shellcatch_timeliner .next{
+	background:#fff url(../images/next.gif) center no-repeat;
+	-webkit-border-radius:0 6px 6px 0;
+	-moz-border-radius:0 6px 6px 0;
+	border-radius:0 6px 6px 0;
+}

@@ -1,0 +1,259 @@
+{% extends "base2.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% load filter %}
+
+{% block css_plugins %}
+{% endblock css_plugins %}
+
+{% block css_global %}
+    {{ block.super }}
+{% endblock css_global %}
+
+{% block css_page %}
+    {{ block.super }}
+    <link href="{% static "assets/pages/css/profile.min.css" %}" rel="stylesheet" type="text/css" />
+{% endblock css_page %}
+
+<body  {% block class_body  %}class="page-container-bg-solid page-boxed"{% endblock class_body  %}>
+
+{% block content  %}
+
+
+        {% block header  %}
+            {{ block.super }}
+        {% endblock header  %}
+
+        {% block container  %}
+            {{ block.super }}
+            {% block head_container %}
+                 <div class="page-head">
+                        <div class="container">
+                            <div class="page-title">
+                                <h1>PROFILE
+                                    <small></small>
+                                </h1>
+                            </div>
+                            <div class="page-toolbar">
+                            </div>
+                        </div>
+                    </div>
+            {% endblock head_container %}
+
+            {% block content_container %}
+               <div class="page-content" style="min-height: 253px;">
+                   <div class="container">
+                         <ul class="page-breadcrumb breadcrumb">
+                             {{ request_path|make_breadcrumbs_user|safe }}
+                         </ul>
+
+                        {% block page-content-inner %}
+                            <div class="page-content-inner">
+                             <div class="row">
+                                <div class="col-md-12">
+                                    <div class="profile-sidebar">
+                                        <div class="portlet light profile-sidebar-portlet ">
+                                            <div class="profile-userpic">
+                                                <img src="{{ current_user.profile_image_exists }}" class="img-responsive" alt=""> </div>
+                                            <div class="profile-usertitle">
+                                                <div class="profile-usertitle-name"> {{ current_user.first_name }}</div>
+                                            </div>
+                                            <div class="profile-userbuttons">
+                                                <button type="button" class="btn btn-circle red btn-sm">Message</button>
+                                            </div>
+                                            <div class="profile-usermenu">
+                                                <ul class="nav">
+                                                    <li class="active">
+                                                        <a href="{% url 'auth_profile' %}">
+                                                            <i class="icon-home"></i> Overview </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{% url 'auth_profile_settings' %}">
+                                                            <i class="icon-settings"></i> Account Settings </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="profile-content">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="portlet light ">
+                                                    <div class="portlet light ">
+                                                        <div class="portlet-title tabbable-line">
+                                                            <div class="caption">
+                                                                <i class="icon-share font-dark"></i>
+                                                                <span class="caption-subject font-dark bold uppercase">Your Member</span>
+                                                            </div>
+                                                            <ul class="nav nav-tabs">
+                                                                <li class="active">
+                                                                    <a href="#portlet_tab1" data-toggle="tab" aria-expanded="true"> Member  </a>
+                                                                </li>
+                                                                <li class="">
+                                                                    <a href="#portlet_tab2" data-toggle="tab" aria-expanded="false"> invited </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="portlet-body">
+                                                            <div class="tab-content">
+                                                                <div class="tab-pane active" id="portlet_tab1">
+                                                                    <div class="portlet-body">
+                                                                        <div class="row number-stats margin-bottom-30">
+                                                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                                                <div class="stat-left">
+                                                                                    <div class="stat-number">
+                                                                                        <div class="title"> Total </div>
+                                                                                        <div class="number"> {{ profile_group|length }}</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="table-scrollable table-scrollable-borderless">
+                                                                            <table class="table table-hover table-light">
+                                                                                <thead>
+                                                                                    <tr class="uppercase">
+                                                                                        <th> avatar </th>
+                                                                                        <th> name </th>
+                                                                                        <th> surname </th>
+                                                                                        <th> email </th>
+                                                                                        <th> cell </th>
+                                                                                        <th> status </th>
+                                                                                    </tr>
+                                                                                </thead>
+
+                                                                                {% for profile in profile_group %}
+                                                                                    <tr>
+                                                                                        <td class="fit"><img class="user-pic" src="{{ profile.profile_image_exists }}"> </td>
+                                                                                        <td> {{ profile.first_name  }}</td>
+                                                                                        <td> {{ profile.last_name  }} </td>
+                                                                                        <td> {{ profile.user.email }} </td>
+                                                                                        <td> {{ profile.cell  }} </td>
+                                                                                        <td>
+                                                                                            {% if not profile.is_deleted %}
+                                                                                               <div class="label label-sm label-default"><i class="fa fa-check"></i></div>
+                                                                                            {% else %}
+                                                                                               <div class="label label-sm label-default"><i class="fa fa-close"></i></div>
+                                                                                            {% endif %}
+
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                {% endfor %}
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="tab-pane" id="portlet_tab2">
+                                                                     <div class="portlet-body">
+                                                                        <div class="row number-stats margin-bottom-30">
+                                                                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                                                                <div class="stat-left">
+                                                                                    <div class="stat-number">
+                                                                                        <a href="#myModal3" role="button" class="btn yellow" data-toggle="modal"> Add invited</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="myModal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+                                                                                    <div class="modal-dialog">
+                                                                                        <div class="modal-content">
+                                                                                            <div class="modal-header">
+                                                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                                                                <h4 class="modal-title">Add Invited </h4>
+                                                                                            </div>
+                                                                                            <div class="modal-body">
+                                                                                                <div class="col-md-offset-3 col-md-9 col-xs-offset-3 col-xs-9">
+                                                                                                    <form class="form-horizontal" role="form">
+                                                                                                        <div class="form-group">
+                                                                                                            <label class="col-md-2 control-label">Name</label>
+                                                                                                            <div class="col-md-6">
+                                                                                                                <input type="email" class="form-control" placeholder="Name"> </div>
+                                                                                                        </div>
+                                                                                                        <div class="form-group">
+                                                                                                            <label class="col-md-2 control-label">E-mail</label>
+                                                                                                            <div class="col-md-6">
+                                                                                                                <input type="text" class="form-control"  placeholder="Email"> </div>
+                                                                                                        </div>
+                                                                                                    </form>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button class="btn default" data-dismiss="modal" aria-hidden="true">Close</button>
+                                                                                                <button data-dismiss="modal" class="btn blue">Confirm</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="table-scrollable table-scrollable-borderless">
+                                                                            <table class="table table-hover table-light">
+                                                                                <thead>
+                                                                                    <tr class="uppercase">
+                                                                                        <th> avatar </th>
+                                                                                        <th> name </th>
+                                                                                        <th> email </th>
+                                                                                        <th> cell </th>
+                                                                                        <th> status </th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                {% for profile in profile_group %}
+                                                                                    <tr>
+                                                                                        <td class="fit"><img class="user-pic" src="{{ profile.profile_image_exists }}"> </td>
+                                                                                        <td> {{ profile.user.first_name  }}</td>
+                                                                                        <td> {{ profile.user.email }} </td>
+                                                                                        <td> {{ profile.cell  }} </td>
+                                                                                        <td>
+                                                                                            {% if not profile.is_deleted %}
+                                                                                               <div class="label label-sm label-default"><i class="fa fa-check"></i></div>
+                                                                                            {% else %}
+                                                                                               <div class="label label-sm label-default"><i class="fa fa-close"></i></div>
+                                                                                            {% endif %}
+
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                {% endfor %}
+                                                                            </table>
+                                                                        </div>
+                                                                     </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+                         </div>
+                        {% endblock page-content-inner %}
+                    </div>
+                </div>
+            {% endblock content_container %}
+        {% endblock container %}
+
+        {% block footer  %}
+            {{ block.super }}
+        {% endblock footer  %}
+
+
+        {% block js  %}
+            {{ block.super }}
+        {% endblock js  %}
+
+
+        {% block js_plugins  %}
+        {% endblock js_plugins  %}
+
+        {% block js_global %}
+            {{ block.super }}
+        {% endblock js_global %}
+
+        {% block js_app  %}
+           {{ block.super }}
+        {% endblock js_app  %}
+
+
+
+{% endblock content %}

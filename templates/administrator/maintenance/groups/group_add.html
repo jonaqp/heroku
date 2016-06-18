@@ -1,0 +1,62 @@
+{% load i18n %}
+
+<div class="portlet-title">
+    <div class="caption">
+        <i class="icon-settings font-dark"></i>
+        <span class="caption-subject font-dark sbold uppercase">
+            {% if not btn_edit %}
+                 {% trans "Create Group" %}
+            {% else %}
+                 {% trans "Edit Group" %} {{ form_group.name.value }}
+            {% endif %}
+
+        </span>
+    </div>
+
+</div>
+<div class="portlet-body form">
+    <div  class="form-body">
+        <form id="form_group_state" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div id="name_errors" class="form-group">
+                <label class="col-md-3 control-label">{% trans "Name"  %}</label>
+                <div class="col-md-9">
+                   {{ form_group.name }}
+                   <span  class="help-block"> {{ form_group.name.errors }} </span>
+                </div>
+            </div>
+            <div id="current_status_errors" class="form-group">
+                <label class="col-md-3 control-label">{% trans "Status"  %}</label>
+                <div class="col-md-9">
+                   {{ form_group.current_status }}
+                   <span  class="help-block"> {{ form_group.current_status.errors }} </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-7">
+                        {% if not btn_edit %}
+                            <button type="submit" class="btn green">{% trans "Submit" %}</button>
+                            <button type="button" class="btn default clean_field">{% trans "Cancel" %}</button>
+                        {% else %}
+                            <button type="button" id="view_group_update" data-id="{{ form_pk }}" class="btn green">{% trans "Update" %}</button>
+                            <button type="button" class="btn default reload_page">{% trans "Exit" %}</button>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <div class="row">
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="alert alert-{{msg.level_tag}}">
+                    <strong>{{ msg.level_tag|capfirst }}! </strong> {{msg.message}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
