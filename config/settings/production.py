@@ -37,8 +37,16 @@ DATABASES = {
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 CACHES = {
-    'default': env.cache('REDIS_URL')
+    "default": {
+         "BACKEND": "redis_cache.RedisCache",
+         "LOCATION": "ec2-54-163-252-131.compute-1.amazonaws.com:14839",
+         "OPTIONS": {
+             "PASSWORD": 'p1j4freu50seok8jvctnkagq83i',
+             "DB": 0,
+         }
+    }
 }
+
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 SESSION_CACHE_ALIAS = "default"
