@@ -5,8 +5,8 @@ ALLOWED_HOSTS = ["*"]
 env_file = str(PROJECT_ROOT.path('security/environ_prod.env'))
 environ.Env.read_env(str(env_file))
 
-DEBUG = True
-# DEBUG = env.bool('DEBUG_PROD')
+
+DEBUG = env.bool('DEBUG_PROD')
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 TEMPLATES[0]['OPTIONS']['loaders'] = [
     ('django.template.loaders.cached.Loader',
